@@ -33,15 +33,20 @@ hist(daily_sum, xlab = "Total steps taken daily", main = "Daily steps taken",
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 ```{r averagedailyactivity, echo = TRUE}
 daily_average <- tapply(X = origdata$steps, INDEX = origdata$interval,  FUN = mean, na.rm = TRUE)
-plot(names(daily_average), daily_average, type = "l", xlab = "5 minute intervals", ylab = "Average daily steps", col = "red", main = "Average daily activity")
+plot(names(daily_average), daily_average, type = "l", xlab = "5 minute intervals", ylab = "Average daily steps", col = "red", main = " Daily activity")
 
-max_steps <- which.max(daily_average)
+max_interval <- names(which.max(daily_average))
+max_steps <- max(daily_average)
 
+print(paste("At interval", max_interval, "the max daily average for this trial period is", max_steps))
 ```
 
 
 
 ## Imputing missing values
+```{r Impute missing data, echo= TRUE}
+
+```
 
 
 
